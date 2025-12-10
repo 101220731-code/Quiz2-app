@@ -8,11 +8,12 @@ class QuestionsScreen extends StatelessWidget {
     required this.onSelectAnswer,
   });
 
-  final Function onSelectAnswer;
+  final Function(int, String) onSelectAnswer;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return SingleChildScrollView( child: 
+    Padding(padding: EdgeInsetsGeometry.all(20), child: SizedBox(
       width: double.infinity,
       child: Column(
         children: [
@@ -26,12 +27,14 @@ class QuestionsScreen extends StatelessWidget {
               questionIndex: qIndex,
               question: question,			  
               onSelectAnswer: onSelectAnswer,
+              nb: qIndex +1,
             );
           }),
 
           const SizedBox(height: 20),
+          ElevatedButton(onPressed: () => _submit, child: Text("submit"))
         ],
-      ),
+      ),) )
     );
   }
 }

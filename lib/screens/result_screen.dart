@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import '../data/questions.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({
-    super.key,
-    required this.onRestart,
-    required this.score,
-  });
+  const ResultScreen({super.key, required this.onRestart, required this.score, required this.nC});
 
   final void Function() onRestart;
   final int score;
+  final VoidCallback nC;
 
   @override
   Widget build(BuildContext context) {
